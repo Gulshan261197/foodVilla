@@ -6,6 +6,7 @@ const Body = () => {
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
 
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -15,7 +16,7 @@ const Body = () => {
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage0-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await data.json();
-        console.log("Testing.....",json)
+        // console.log("Testing.....",json)
         const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setrestaurantList(restaurants);
         setFilteredRestaurant(restaurants);
